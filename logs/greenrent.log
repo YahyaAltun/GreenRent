@@ -383,3 +383,6 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-07-26 04:45:51,072 INFO  [RMI TCP Connection(3)-192.168.1.91] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-07-26 04:45:51,073 INFO  [RMI TCP Connection(3)-192.168.1.91] org.springframework.web.servlet.DispatcherServlet:Initializing Servlet 'dispatcherServlet'
 2022-07-26 04:45:51,074 INFO  [RMI TCP Connection(3)-192.168.1.91] org.springframework.web.servlet.DispatcherServlet:Completed initialization in 1 ms
+2022-07-26 05:16:44,472 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-26 05:16:44,521 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2022-07-26 05:16:44,535 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
