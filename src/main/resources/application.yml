@@ -24,6 +24,11 @@ spring:
       hibernate:
         format_sql: true
 
+greenrent:
+  app:
+    jwtSecret: greenRent@12
+    jwtExpirationMs: 86400000
+
 logging:
   file:
     name: logs/greenrent.log
