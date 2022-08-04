@@ -1,4 +1,4 @@
-package com.greenrent.dto;
+package com.greenrent.dto.request;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
