@@ -11,4 +11,5 @@ public class ErrorMessage {
     public static final String IMAGE_NOT_FOUND_MESSAGE = "ImageFile with id %s not found";
     public static final String RESERVATION_TIME_INCORRECT_MESSAGE = "Reservation Time incorrect";
     public static final String CAR_NOT_AVAILABLE_MESSAGE = "Car is not available for selected time";
+    public static final String EXCEL_REPORT_CREATION_ERROR_MESSAGE = "Error occurred while generation excel report";
 }
