@@ -9,6 +9,7 @@ import com.greenrent.exception.ResourceNotFoundException;
 import com.greenrent.exception.message.ErrorMessage;
 import com.greenrent.repository.CarRepository;
 import com.greenrent.repository.ImageFileRepository;
+import com.greenrent.repository.ReservationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -28,6 +29,8 @@ public class CarService {
     private ImageFileRepository imageFileRepository;
 
     private CarMapper carMapper;
+
+    private ReservationRepository reservationRepository;
 
 
     @Transactional(readOnly = true)
@@ -87,6 +90,11 @@ public class CarService {
     public void removeById(Long id){
         Car car = carRepository.findById(id).orElseThrow(()-> new
                 ResourceNotFoundException(String.format(ErrorMessage.RESOURCE_NOT_FOUND_MESSAGE,id)));
+
+        boolean exists = reservationRepository.existsByCarId(car);
+        if (exists){
+            throw new BadRequestException(ErrorMessage.CAR_USED_BY_RESERVATION_MESSAGE);
+        }
 
         if (car.getBuiltIn()){
             throw new BadRequestException(ErrorMessage.NOT_PERMITTED_METHOD_MESSAGE);

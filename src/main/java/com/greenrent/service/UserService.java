@@ -13,6 +13,7 @@ import com.greenrent.exception.BadRequestException;
 import com.greenrent.exception.ConflictException;
 import com.greenrent.exception.ResourceNotFoundException;
 import com.greenrent.exception.message.ErrorMessage;
+import com.greenrent.repository.ReservationRepository;
 import com.greenrent.repository.RoleRepository;
 import com.greenrent.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -37,6 +38,7 @@ public class UserService {
     private RoleRepository roleRepository;
     private PasswordEncoder passwordEncoder;
     private UserMapper userMapper;
+    private ReservationRepository reservationRepository;
 
     public void register(RegisterRequest registerRequest){
         if (userRepository.existsByEmail(registerRequest.getEmail())){
@@ -158,6 +160,11 @@ public class UserService {
     public void removeById(Long id){
         User user=userRepository.findById(id).orElseThrow(()-> new
                 ResourceNotFoundException(String.format(ErrorMessage.RESOURCE_NOT_FOUND_MESSAGE,id)));
+
+        boolean exists = reservationRepository.existsByUserId(user);
+        if (exists){
+            throw new BadRequestException(ErrorMessage.USER_USED_BY_RESERVATION_MESSAGE);
+        }
 
         if (user.getBuiltIn()){
             throw new BadRequestException(ErrorMessage.NOT_PERMITTED_METHOD_MESSAGE);

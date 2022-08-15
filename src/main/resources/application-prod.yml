@@ -1,0 +1,22 @@
+
+logging:
+  file:
+    name: greenrent_prod.log
+  pattern:
+    file: "%d %-5level [%thread] %logger:%msg%n"
+
+  level:
+    '[org.springframework.web]': INFO
+    '[org.hibernate]': INFO
+    '[com.greenrent]': INFO
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ['info','health']
+
+  info:
+    env:
+      enabled: true

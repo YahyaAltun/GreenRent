@@ -44,3 +44,9 @@ logging:
     '[org.springframework.web]': INFO
     '[org.hibernate]': INFO
     '[com.greenrent]': DEBUG
+
+info:
+  application:
+    name: 'GreenRent Backend App.'
+    descprition: 'This is GreenRent Backend app dev by GreenRent Dev Team'
+    version: '@project.version@'

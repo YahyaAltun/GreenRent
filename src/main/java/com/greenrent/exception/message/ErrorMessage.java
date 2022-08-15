@@ -12,4 +12,6 @@ public class ErrorMessage {
     public static final String RESERVATION_TIME_INCORRECT_MESSAGE = "Reservation Time incorrect";
     public static final String CAR_NOT_AVAILABLE_MESSAGE = "Car is not available for selected time";
     public static final String EXCEL_REPORT_CREATION_ERROR_MESSAGE = "Error occurred while generation excel report";
+    public static final String CAR_USED_BY_RESERVATION_MESSAGE = "Car could not be deleted. Car is used by a reservation";
+    public static final String USER_USED_BY_RESERVATION_MESSAGE = "User could not be deleted. User is used by a reservation";
 }
