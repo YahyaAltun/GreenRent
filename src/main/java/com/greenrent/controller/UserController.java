@@ -1,6 +1,7 @@
 package com.greenrent.controller;
 
 import com.greenrent.dto.UserDTO;
+import com.greenrent.dto.request.AdminUserUpdateRequest;
 import com.greenrent.dto.request.UpdatePasswordRequest;
 import com.greenrent.dto.request.UserUpdateRequest;
 import com.greenrent.dto.response.GRResponse;
@@ -109,6 +110,34 @@ public class UserController {
 
         GRResponse response=new GRResponse();
         response.setMessage(ResponseMessage.DELETE_RESPONSE_MESSAGE);
+        response.setSuccess(true);
+
+        return ResponseEntity.ok(response);
+    }
+
+    //http://localhost:8083/user/3/auth
+    /*
+    "id": 3,
+        "firstName": "Nazli1",
+        "lastName": "Nazli1",
+        "email": "nazli@email.com",
+        "phoneNumber": "(541) 317-8828",
+        "password":"nazli12",
+        "address": "NewYork,USA",
+        "zipCode": "36548",
+        "builtIn": false,
+        "roles": [
+            "Customer",
+            "Administrator"
+        ]
+     */
+    @PutMapping("/{id}/auth")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<GRResponse> updateUserAuth(@PathVariable Long id, @Valid @RequestBody AdminUserUpdateRequest adminUserUpdateRequest){
+        userService.updateUserAuth(id,adminUserUpdateRequest);
+
+        GRResponse response=new GRResponse();
+        response.setMessage(ResponseMessage.UPDATE_RESPONSE_MESSAGE);
         response.setSuccess(true);
 
         return ResponseEntity.ok(response);

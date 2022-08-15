@@ -4,7 +4,7 @@ server:
     include-message: always
     include-binding-errors: always
     include-stacktrace: never
-    #servlet:
+  #servlet:
     #context-path: /car-rental/api
 
 
@@ -23,6 +23,11 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
 
 greenrent:
   app:
