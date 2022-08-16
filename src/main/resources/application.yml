@@ -23,6 +23,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        #hibernate:
+          #enable_lazy_load_no_trans: true
+    #open-in-view: false
 
   servlet:
     multipart:
