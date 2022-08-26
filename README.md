@@ -1,3 +1,4 @@
+
 Definition: The Car Rental application is a web application which is able to be rent a car
 directly by using a web browser in your computer, phone, tablet, or mobile device. There will be
 different types of user in the CarRental application. While unregistered users are able to see
@@ -62,3 +63,51 @@ design a system from the end user's perspective. It is an effective technique fo
 system behavior in the user's terms by specifying all externally visible system behavior.
 
 ![Graphic1](https://user-images.githubusercontent.com/101723854/186869019-1c6fceb5-a68f-4f78-bc21-fb2f0695a9dd.png)
+![Graphic2](https://user-images.githubusercontent.com/101723854/186869271-f3e184a1-7e69-41e0-b772-ec4bb299916e.png)
+![Graphic3](https://user-images.githubusercontent.com/101723854/186869356-87144c08-b5be-49e7-a11e-854dd20b9f82.png)
+![Graphic4](https://user-images.githubusercontent.com/101723854/186869381-9e74655f-15d2-43ad-87fb-e6c9ffaec861.png)
+![Graphic5](https://user-images.githubusercontent.com/101723854/186869405-36484cd8-abaa-4199-906d-3b8de5bc66ad.png)
+![Graphic6](https://user-images.githubusercontent.com/101723854/186869433-0e85e485-49c2-4241-a07d-2beb14af4e5f.png)
+
+
+Entities and Relations Between Entity in the Application
+![Relations](https://user-images.githubusercontent.com/101723854/186869543-9194f6c7-0193-43c9-a91b-8426133c7fed.png)
+
+•One User can have many roles and One Role can belongs to Many User (Many To Many 
+relation)
+•One Reservation has a User (One To One relation)
+•One Reservation has a Car (One To One relation)
+•One Car can have many ImageFile and ImageFile can belongs to Many Car (Many To Many
+relation)
+•Role has a RoleType (Enumeration)
+•Reservation has a ReservationStatus (Enumeration)
+
+
+THE TOPICS THAT YOU SHOULD REVIEW BEFORE STARTING PROJECT
+
+1. Core Java: OOPS, classes, enums, interfaces, exception handling, collections, stream 
+(foreach, filter, map), lambda,optional key word and other fundamentals.
+2. Logging (SLF4J, Logback)
+3. Regular expressions
+4. What is Spring Framework.
+5. What is Spring Boot Framework
+6. What is Spring Security Framework. (JWT Based Security)
+7. What is inversion of control , dependency injection and  Spring IOC Container
+8. What is JPA, Hibernate and Spring Data JPA
+9. What is entity class and how to create it
+10. What are OneToOne, OneToMany, ManyToOne, ManyToMany relations on hibernate.
+11. How to use @JoinTable, @JoinColum annotations. 
+12. JPQL (Java Persistence Query Language), Basic SQL knowledge
+13. What is REST API
+14. How , why to use @Bean, @Autowired, @RestController, @Service, @Repository 
+annotations.
+15. Jackson annotations (@JsonIgnore, @JsonFormat etc.)
+16. Controller-Service-Repository layered structure in spring boot app
+17. What is @Transactional annotation in org.springframework.transaction.annotation
+18. What is the Data Transfer Object and how to use it.
+19. Usage of @ResponseEntity, @ResponseBody, @Request Body, @RequestMapping, 
+@PostMapping, @GetMapping, @DeleteMapping, @PutMapping. @Valid
+ annotations.
+20. HTTP Response Status Codes. (200, 201, 400, 404, etc.) 
+21. Why and How to use @PathVariable and @QueryParam annotations
+22. Project Lombok
