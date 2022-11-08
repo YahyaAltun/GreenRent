@@ -118,7 +118,7 @@ public class ReservationController {
 
     //Admin bir reservation id ile reservation bilgisini dondurmek icin kullaniyor.
     //http://localhost:8083/reservation/1/admin
-    @GetMapping("/{id}}/all")
+    @GetMapping("/{id}/all")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ReservationDTO> getReservationById(@PathVariable ("id") Long id){
         ReservationDTO reservations = reservationService.findById(id);
