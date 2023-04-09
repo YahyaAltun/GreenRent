@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping
 @AllArgsConstructor
 public class UserJWTController {
 
